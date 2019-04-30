@@ -1,0 +1,28 @@
+{
+  "name": "rxnet/http-client",
+  "description": "HTTP Client based on ReactPHP one with Buzz style and ReactiveX",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jérémy Marodon",
+      "email": "marodon.jeremy@gmail.com"
+    }
+  ],
+  "require": {
+    "clue/buzz-react": "^2.6",
+    "reactivex/rxphp": "^2.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpro/grumphp": "^0.15.0",
+    "sensiolabs/security-checker": "^5.0",
+    "phpstan/phpstan": "^0.11.5",
+    "youdot/coding-standard": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rxnet\\HttpClient\\": "src/"
+    }
+  }
+}
