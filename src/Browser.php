@@ -17,7 +17,7 @@ use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
 use Rx\ObservableInterface;
 
-final class Browser
+class Browser
 {
     /** @var ReactBrowser */
     private $browser;
