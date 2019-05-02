@@ -18,6 +18,12 @@
     <!-- Or include full Youdot Coding Standard for Symfony-->
     <rule ref="Youdot"/>
 
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing">
+        <properties>
+            <property name="linesCountBeforeNamespace" value="2"/>
+        </properties>
+    </rule>
+
     <!-- Directories to be checked -->
     <file>src</file>
 </ruleset>
