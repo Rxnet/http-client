@@ -15,7 +15,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
 use React\Stream\ReadableStreamInterface;
 use Rx\Observable;
-use Rx\ObservableInterface;
 
 class Browser
 {
@@ -37,7 +36,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function get($url, array $headers = []): ObservableInterface
+    public function get($url, array $headers = []): Observable
     {
         return Observable::fromPromise($this->browser->get($url, $headers));
     }
@@ -48,7 +47,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function post($url, array $headers = [], $contents = ''): ObservableInterface
+    public function post($url, array $headers = [], $contents = ''): Observable
     {
         return Observable::fromPromise($this->browser->post($url, $headers, $contents));
     }
@@ -58,7 +57,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function head($url, array $headers = []): ObservableInterface
+    public function head($url, array $headers = []): Observable
     {
         return Observable::fromPromise($this->browser->head($url, $headers));
     }
@@ -69,7 +68,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function patch($url, array $headers = [], $contents = ''): ObservableInterface
+    public function patch($url, array $headers = [], $contents = ''): Observable
     {
         return Observable::fromPromise($this->browser->patch($url, $headers, $contents));
     }
@@ -80,7 +79,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function put($url, array $headers = [], $contents = ''): ObservableInterface
+    public function put($url, array $headers = [], $contents = ''): Observable
     {
         return Observable::fromPromise($this->browser->put($url, $headers, $contents));
     }
@@ -91,7 +90,7 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function delete($url, array $headers = [], $contents = ''): ObservableInterface
+    public function delete($url, array $headers = [], $contents = ''): Observable
     {
         return Observable::fromPromise($this->browser->delete($url, $headers, $contents));
     }
@@ -101,12 +100,12 @@ class Browser
      *
      * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification
      */
-    public function submit($url, array $fields, array $headers = [], string $method = 'POST'): ObservableInterface
+    public function submit($url, array $fields, array $headers = [], string $method = 'POST'): Observable
     {
         return Observable::fromPromise($this->browser->submit($url, $fields, $headers, $method));
     }
 
-    public function send(RequestInterface $request): ObservableInterface
+    public function send(RequestInterface $request): Observable
     {
         return Observable::fromPromise($this->browser->send($request));
     }
